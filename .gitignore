@@ -1,0 +1,46 @@
+# =========================
+# 1. Entornos Virtuales
+# =========================
+# Ignoramos la carpeta donde se instalan las librerías (pesa mucho)
+venv/
+env/
+.env/
+
+# =========================
+# 2. Base de Datos Local
+# =========================
+# Ignoramos los vectores de ChromaDB. Cada desarrollador debe construir su propia memoria.
+chroma_db/
+local_vector_db/
+
+# =========================
+# 3. Caché de Python
+# =========================
+# Archivos compilados que Python genera automáticamente para arrancar más rápido
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# =========================
+# 4. Archivos de Sistema (macOS)
+# =========================
+# Archivos invisibles que el Finder de Mac crea automáticamente
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# =========================
+# 5. Secretos y Configuración Local
+# =========================
+# Para que nunca subas accidentalmente contraseñas o tokens si decides usar un .env después
+.env
+*.env
+.env.local
+
+# =========================
+# 6. Editores e IDEs (VS Code)
+# =========================
+# Configuraciones locales de tu editor que no le importan al resto del equipo
+.vscode/
+.idea/
