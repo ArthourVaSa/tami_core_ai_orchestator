@@ -33,6 +33,9 @@ go run ./cmd/tami serve                        # HTTP gateway on :3500
 go test -race ./...                            # tests
 ```
 
+**Git:** all work goes through a pull request; never commit on or push to `main` (WORKFLOW rule 6).
+After cloning, enable the repo's git hooks once: `git config core.hooksPath .githooks`.
+
 Never build binaries inside the repo. User config: `~/.tami/agents.json`; daily usage: `~/.tami/usage.json`.
 
 ## Current state

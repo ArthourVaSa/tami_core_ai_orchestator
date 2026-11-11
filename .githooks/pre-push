@@ -1,0 +1,11 @@
+#!/bin/sh
+# All work reaches main through a pull request, so direct pushes to it are rejected.
+while read -r local_ref local_sha remote_ref remote_sha; do
+  case "$remote_ref" in
+    refs/heads/main | refs/heads/master)
+      echo "❌ Direct push to ${remote_ref#refs/heads/} is blocked. Push a branch and open a PR." >&2
+      exit 1
+      ;;
+  esac
+done
+exit 0

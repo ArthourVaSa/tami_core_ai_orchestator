@@ -94,6 +94,12 @@ Task `status`:
    Low/Info are recorded in `docs/security/BACKLOG.md` and do not block.
 5. **Only `ship` touches git history.** No agent commits, pushes or opens PRs. `ship` pushes and opens
    a PR only with `--pr`, after you confirm.
+6. **Everything reaches `main` through a pull request.** Nobody commits on `main` or pushes to it, not
+   agents and not humans. Each spec gets its own branch (`spec/SPEC-NNN-<slug>`) and its own PR; other
+   work uses `<type>/<name>` branches (`chore/`, `fix/`, `docs/`). Enforced by:
+   - GitHub branch protection on `main` (PR required, no force-push, applies to admins too),
+   - git hooks in `.githooks/` (`pre-commit` blocks commits on `main`, `pre-push` blocks pushes to it),
+   - the Claude Code hook `.claude/hooks/protect-main.sh`.
 6. **No real tokens in automatic steps.** Agents never run `go run ./cmd/tami run ...` or `serve`
    against real agent CLIs. Tests use fakes.
 

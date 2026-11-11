@@ -20,8 +20,10 @@ Then run the `verify` checks: `gofmt -l .` prints nothing, `go vet ./...` and `g
 
 ## 2. Branch
 
-Branch name: `spec/SPEC-NNN-<spec slug>`. If you are on `main`, create it (`git switch -c`) or switch to
-it if it exists. Never commit to `main`.
+Branch name: `spec/SPEC-NNN-<spec slug>`, one branch and one PR per spec. If it doesn't exist, create it
+from an up-to-date `main` (`git fetch origin && git switch -c <branch> origin/main`); otherwise switch to it.
+**Never commit on `main` and never push to `main`** (docs/WORKFLOW.md, rule 6); hooks will block it
+anyway. If you are on another unrelated branch with changes, stop and report it.
 
 ## 3. Commit (one per task)
 

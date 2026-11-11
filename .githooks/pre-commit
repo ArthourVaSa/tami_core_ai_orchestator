@@ -1,0 +1,9 @@
+#!/bin/sh
+# Commits on main could only reach the remote by a direct push, so they are rejected early.
+case "$(git branch --show-current)" in
+  main | master)
+    echo "❌ Committing on $(git branch --show-current) is blocked. Create a branch: git switch -c <type>/<name>" >&2
+    exit 1
+    ;;
+esac
+exit 0
