@@ -1,0 +1,10 @@
+# Binarios de Go
+/tami
+*.exe
+*.test
+*.out
+
+# Ajustes personales de Claude Code (los compartidos en .claude/ sí se versionan)
+.claude/settings.local.json
+
+.DS_Store
